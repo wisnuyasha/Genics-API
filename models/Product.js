@@ -6,6 +6,17 @@ const {
 // Create schema
 // - name: String
 // - price: Number
-const Product = Schema();
+
+const Project = Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  quantity: {
+    type: Number,
+    required: true
+  },
+});
+
 
 module.exports = model('Products', Product);
