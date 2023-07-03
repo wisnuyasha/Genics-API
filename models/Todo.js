@@ -7,16 +7,16 @@ const {
 // - name: String
 // - price: Number
 
-const Project = Schema({
-  name: {
+const Todo = Schema({
+  todo: {
     type: String,
     required: true
   },
-  quantity: {
-    type: Number,
+  description: {
+    type: String,
     required: true
   },
 });
 
 
-module.exports = model('Products', Product);
+module.exports = model('Todos', Todo);

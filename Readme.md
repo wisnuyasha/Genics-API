@@ -93,15 +93,11 @@ Some additional directories may be present depending on the requirements of the 
 
 The API provides endpoints for managing users and products in a simple ecommerce application. Here is a brief overview of the available endpoints:
 
-- **Users**
-  - `GET /users`: Retrieve a list of all users.
-  - `POST /users`: Create a new user.
-
-- **Products**
-  - `GET /products`: Retrieve a list of all products.
-  - `POST /products`: Create a new product.
-  - `PUT /products/:id`: Update an existing product by ID.
-  - `DELETE /products/:id`: Delete a product by ID.
+- **Todos**
+  - `GET /todos`: Retrieve a list of all products.
+  - `POST /todos`: Create a new product.
+  - `PUT /todos/:id`: Update an existing product by ID.
+  - `DELETE /todos/:id`: Delete a product by ID.
 
 For detailed information about the request and response format for each endpoint, please refer to the individual route files in the `routes` directory.
 
