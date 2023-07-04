@@ -6,12 +6,33 @@ const getTodo = async (req, res) => {
     const todos = await Todo.find();
     res.status(200).json({
       message: "Get todos success",
-      data: todos
+      data: todos,
     });
   } catch (err) {
     res.status(500).json({
       message: "Get todos failed",
-      data: err
+      data: err,
+    });
+  }
+};
+
+const getTodoById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const todo = await Todo.findById(id);
+    if (!todo) {
+      return res.status(404).json({
+        message: "Todo not found",
+      });
+    }
+    res.status(200).json({
+      message: "Get todo by id success",
+      data: todo,
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: "Get todo by id failed",
+      data: err,
     });
   }
 };
@@ -23,12 +44,12 @@ const saveTodo = async (req, res) => {
     const savedTodo = await todo.save();
     res.status(200).json({
       message: "Add todo success",
-      data: savedTodo
+      data: savedTodo,
     });
   } catch (err) {
     res.status(500).json({
       message: "Add todo failed",
-      data: err
+      data: err,
     });
   }
 };
@@ -37,7 +58,9 @@ const saveTodo = async (req, res) => {
 const updateTodo = async (req, res) => {
   try {
     const { id } = req.params;
-    const updatedTodo = await Todo.findByIdAndUpdate(id, req.body, { new: true });
+    const updatedTodo = await Todo.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
     res.status(200).json({
       message: "Update todo success",
       data: updatedTodo,
@@ -68,6 +91,7 @@ const deleteTodo = async (req, res) => {
 
 module.exports = {
   getTodo,
+  getTodoById,
   saveTodo,
   updateTodo,
   deleteTodo,

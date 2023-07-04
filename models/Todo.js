@@ -3,10 +3,6 @@ const {
   model
 } = require("mongoose");
 
-// Create schema
-// - name: String
-// - price: Number
-
 const Todo = Schema({
   todo: {
     type: String,
@@ -16,7 +12,10 @@ const Todo = Schema({
     type: String,
     required: true
   },
+  checklist: {
+    type: String,
+    required: false
+  }
 });
-
 
 module.exports = model('Todos', Todo);
