@@ -13,7 +13,7 @@ const Todo = Schema({
     required: true
   },
   checklist: {
-    type: String,
+    type: Boolean,
     required: false
   }
 });
