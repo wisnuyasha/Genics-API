@@ -2,15 +2,6 @@
 
 This repository provides a basic boilerplate for creating a REST API using Express and MongoDB. The repository includes the necessary dependencies and a pre-defined folder structure to get you up and running smoothly.
 
-## Table of Contents
-1. [Basic Requirements](#basic-requirements)
-2. [Getting Started](#getting-started)
-3. [Database](#database)
-4. [Application Structure](#application-structure)
-5. [API Overview](#api-overview)
-6. [Authentication and Authorization](#authentication-and-authorization)
-7. [Error Handling](#error-handling)
-
 ## Basic Requirements
 
 To run this API, you need to have the following software installed on your machine:
@@ -57,6 +48,19 @@ To install and run this repository, follow these steps:
 
    The API will now be running at `http://localhost:5000`.
 
+## API Overview
+
+The API provides endpoints for managing users and products in a simple ecommerce application. Here is a brief overview of the available endpoints:
+
+- **Todos**
+  - `GET /todos`: Retrieve a list of all todos.
+  - `GET /todos/:id`: Retrieve a todo by ID.
+  - `POST /todos`: Create a new todos.
+  - `PUT /todos/:id`: Update an existing todo by ID.
+  - `DELETE /todos/:id`: Delete a todo by ID.
+
+For detailed information about the request and response format for each endpoint, please refer to the individual route files in the `routes` directory.
+
 ## Database
 
 This API uses MongoDB as its database. You can either set up a local MongoDB installation or use an online database service such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). To connect to your database, provide the MongoDB connection URI in the `.env` file as mentioned in the Getting Started section.
@@ -88,18 +92,6 @@ Some additional directories may be present depending on the requirements of the 
 - The `config.js` file stores configuration variables.
 - The `.env` file should be created and populated with environment-specific variables as mentioned in the Getting Started section.
 - The `package.json` file lists the project dependencies
-
-## API Overview
-
-The API provides endpoints for managing users and products in a simple ecommerce application. Here is a brief overview of the available endpoints:
-
-- **Todos**
-  - `GET /todos`: Retrieve a list of all products.
-  - `POST /todos`: Create a new product.
-  - `PUT /todos/:id`: Update an existing product by ID.
-  - `DELETE /todos/:id`: Delete a product by ID.
-
-For detailed information about the request and response format for each endpoint, please refer to the individual route files in the `routes` directory.
 
 ## Authentication and Authorization
 
